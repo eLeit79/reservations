@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+th.min {
+    width: 1%;
+    white-space: nowrap;
+}
+
+td.min {
+    width: 1%;
+    white-space: nowrap;
+}
