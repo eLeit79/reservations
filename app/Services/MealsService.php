@@ -26,6 +26,6 @@ class MealsService
             $meals = $mealsRequest->json()['meals'];
         }
 
-        return $meals;
+        return collect($meals)->sortBy('strMeal');
     }
 }

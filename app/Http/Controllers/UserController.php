@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use App\Models\RestaurantTable;
 use App\Services\DateTimeService;
 use App\Services\DrinksService;
 use App\Services\MealsService;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
@@ -45,8 +45,10 @@ class UserController extends Controller
 
     public function reservations()
     {
+        $reservations = Reservation::with('tables')->where('user_id', '=', Auth::id())->get();
+
         return view('reservations', [
-            'reservations' => Auth::user()->reservations
+            'reservations' => $reservations
         ]);
     }
 }

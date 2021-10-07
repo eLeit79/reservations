@@ -9,14 +9,7 @@ use Illuminate\Support\Facades\Http;
 class DrinksService
 {
 
-    /**
-     * Get drinks from the Punk API
-     *
-     * @param int $page
-     * @param int $perPage
-     * @return array
-     */
-    public function getDrinksList($page = 1, $perPage = 25): array
+    public function getDrinksList($page = 1, $perPage = 25)
     {
         $drinks = [
             ['id' => -1, 'name' => 'Beer'],
@@ -33,6 +26,8 @@ class DrinksService
         if ($drinksRequest->successful()) {
             $drinks = $drinksRequest->json();
         }
+
+        $drinks = collect($drinks)->sortBy('name');
 
         return $drinks;
     }

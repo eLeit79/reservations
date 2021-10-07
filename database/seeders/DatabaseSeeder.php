@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Martin',
             'email' => 'menderleit@gmail.com',
             'password' => bcrypt('password'),
-//            'is_admin' => true
+            'is_admin' => true
         ]);
 
         ReservationTable::factory(10)->create();

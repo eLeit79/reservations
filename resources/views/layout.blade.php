@@ -51,7 +51,7 @@ use \Illuminate\Support\Facades\Auth;
             </ul>
             @if($loggedIn)
                 <span class="navbar-text p-2">
-                    {{ $user->name }} is Logged In
+                    Welcome, <strong>{{ $user->name }}</strong>!
                 </span>
             @endif
             @if($loggedIn)

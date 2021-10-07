@@ -22,7 +22,7 @@ class RestaurantTableFactory extends Factory
     public function definition()
     {
         return [
-            'table_number' => $this->faker->unique()->numberBetween()
+            'table_number' => $this->faker->unique()->numberBetween(1, 10)
         ];
     }
 }
